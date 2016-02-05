@@ -1,8 +1,8 @@
 name: Shadow
-markdown: redcarpet
+markdown: kramdown
 highlighter: true
 url: http://vinitkumar.me/white-paper
-gems: [jekyll-paginate,  jekyll-gist]
+gems: [jekyll-paginate]
 paginate: 8
 description:     Jekyll theme for Programmers
 intro: Shadow is a Jekyll theme
