@@ -1,16 +1,18 @@
 ---
 layout: post
-title:  "Hello World!"
-date:   2019-04-10 11:27:43 -0600
+title: "Hello World!"
+date: 2019-04-11 11:27:43 -0600
 categories: intro
 ---
-Hello World
 
-Welcome! This is a place for me to put down some of my thoughts on everything from Software Development to Parenting to Reglion to Leadership.
+Hello, and welcome to my blog. It feels a little 2002 to be starting a blog, but I feel like this is something that I need to do. I have never excelled at writing, in fact, it would be fair to call it one of my weaknesses. My wife and kids can all tell you that I am not good at spelling, and rarely write.
 
-About Me
-I having been writing software since 2003, starting with web then moving to writing apps for iOS. I currently run The Tucker Brothers and lead the mobile development teams at Jane. (The views I post on this site are my own and do not reflect the view of my employers).
+It's because of this that I feel I need to write more. I need the practice, I need the challenge, and I want to build a skill where one didn't exist before.
 
-When I am not writing code, I am spending time with my family. I have the most amazing wife and children in the world and I love being with them.
+Writing a blog is something that has been on my to-do list for a long time. Always sitting on the back burner, waiting for it to be convenient, or somehow be easier. There are several factors into why I am doing this now, but a recent experience with my daughter sticks out the most.
 
-I am also a member of the LDS church, which most people know as the Mormon church. I am always happy to answer questions about the what’s and why’s of what I believe. A great place to start would be https://www.lds.org.
+My oldest is in middle school and has joined the track team. As someone that loves to run myself, I was proud of her and excited to run with her. Over their Spring Break, she was told that her homework for one of the days was to run 3 miles. It was a beautiful day out as we laced up our running shoes and hit the road. We weren't even a quarter mile in when she started feeling tired. After 1 mile, she was ready to stop. "You can do hard things," I told her, "I know you can do this." I took her hand, and together we finished the 3-mile run. As we ran, we talked about how you grow the most when you are challenged. It by continuing through the hard things that we gain strength. I friend of mine once put it this way, "There is no comfort in a growth zone and no growth in a comfort zone."
+
+As I gave my daughter that advice, my words made me think about the things I wanted to give up on, what was too hard, and took too much effort? Writing was one of those things.
+
+So, here I am! Ready to share my thoughts, experiences, lessons learned, and to take the next step towards being a great writer.
