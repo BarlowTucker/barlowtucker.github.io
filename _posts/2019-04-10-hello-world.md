@@ -3,6 +3,7 @@ layout: post
 title: "Hello World!"
 date: 2019-04-11 11:27:43 -0600
 categories: intro
+image: /assets/images/writing.jpg
 ---
 
 Hello, and welcome to my blog. It feels a little 2002 to be starting a blog, but I feel like this is something that I need to do. I have never excelled at writing, in fact, it would be fair to call it one of my weaknesses. My wife and kids can all tell you that I am not good at spelling, and rarely write.
