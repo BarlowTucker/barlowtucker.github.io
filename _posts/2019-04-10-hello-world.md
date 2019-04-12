@@ -17,3 +17,5 @@ My oldest is in middle school and has joined the track team. As someone that lov
 As I gave my daughter that advice, my words made me think about the things I wanted to give up on, what was too hard, and took too much effort? Writing was one of those things.
 
 So, here I am! Ready to share my thoughts, experiences, lessons learned, and to take the next step towards being a great writer.
+
+> Photo Credit: https://www.pexels.com/photo/writing-notes-idea-class-7103/
