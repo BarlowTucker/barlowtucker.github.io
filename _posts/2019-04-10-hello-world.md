@@ -3,8 +3,11 @@ layout: single
 title: "Hello World!"
 date: 2019-04-11 11:27:43 -0600
 categories: intro
+tags: [introduction, writing, hard work]
 header:
   image: /assets/images/writing.jpg
+  description: "Writing"
+  caption: "Photo Credit: [Pexels](https://www.pexels.com/photo/writing-notes-idea-class-7103/)"
 ---
 
 Hello, and welcome to my blog. It feels a little 2002 to be starting a blog, but I feel like this is something that I need to do. I have never excelled at writing, in fact, it would be fair to call it one of my weaknesses. My wife and kids can all tell you that I am not good at spelling, and rarely write.
@@ -18,5 +21,3 @@ My oldest is in middle school and has joined the track team. As someone that lov
 As I gave my daughter that advice, my words made me think about the things I wanted to give up on, what was too hard, and took too much effort? Writing was one of those things.
 
 So, here I am! Ready to share my thoughts, experiences, lessons learned, and to take the next step towards being a great writer.
-
-> Photo Credit: https://www.pexels.com/photo/writing-notes-idea-class-7103/
