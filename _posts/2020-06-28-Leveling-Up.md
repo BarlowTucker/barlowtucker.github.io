@@ -4,6 +4,8 @@ title: "Leveling Up"
 tags: [growth, goals, level up]
 featured_image_thumbnail: assets/images/posts/2020/pexels-plant.jpg
 featured_image: assets/images/posts/2020/pexels-plant.jpg
+featured: true
+hidden: true
 ---
 
 We all love to level up our skills. Personal growth is so deeply baked into the foundations of our motivations that game designers use reaching a higher level as an addictive element to their games. The desire to be more, to be better tomorrow than we are today, is one of life’s most motivating drivers. In the early 1930s, a psychologist named Lev Vygotsky developed an idea that has changed how we view personal growth.

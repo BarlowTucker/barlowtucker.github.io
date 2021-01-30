@@ -4,6 +4,8 @@ title: "Why I Joined Route"
 tags: [Route, Startups, Challenges]
 featured_image_thumbnail: assets/images/posts/2019/route01.png
 featured_image: assets/images/posts/2019/route01.png
+featured: true
+hidden: false
 ---
 
 Ryan Debenham, the CTO at Route, recently wrote an article on LinkedIn explaining [why he joined Route](https://www.linkedin.com/pulse/why-i-joined-route-ryan-debenham/). I enjoyed reading about his journey to Route and felt that I wanted to share my story as well.
