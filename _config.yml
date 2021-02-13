@@ -39,6 +39,8 @@ navigation:
     url: /
   - text: About
     url: /about
+  - text: Videos
+    url: /videos
   - text: Search
     url: /search
 
