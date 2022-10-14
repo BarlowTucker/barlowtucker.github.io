@@ -6,7 +6,7 @@ logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
   image: "barlow2020.jpg"
-  greetings: "Welcome to my Blog! Let's talk about Tech and Leadership!"
+  greetings: "Start-ups, Leadership, and Technology"
 favicon: "assets/images/favicon.ico"
 baseurl:
 production_url: https://barlowtucker.com/
@@ -39,8 +39,8 @@ navigation:
     url: /
   - text: About
     url: /about
-  - text: Videos
-    url: /videos
+  # - text: Videos
+  #   url: /videos
   - text: Search
     url: /search
 
