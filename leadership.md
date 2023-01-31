@@ -10,10 +10,10 @@ My own leadership philosophy has been built over years of practice, study, mista
 
 Below are quick overviews of the main characteristics of leadership, along with some thoughts and research on the topic. There is a lot more to say than I will put on this page, however, if you'd like more information, each section links to blog posts, training courses and books on the topic.
 
-## Expectations
+## Setting Expectations
 Leaders are responsible for executing on a vision. They gather the right people together and explain expected outcomes. People being lead must be set up for success by the leaders on their team.
 
-Research shows setting clear expectations improves outcomes. ==TODO==
+Research shows setting clear expectations improves outcomes. <mark>==TODO==</mark>
 
 Setting clear expectations with measurable outcomes with teams and individuals creates an environment where both can be set up for success. This has the added benefit that no one is left wondering how well their performance measures up. 
 
@@ -41,25 +41,44 @@ Communication is one of the critical skills any leader needs to have. Great comm
 - Expressing Genuine Empathy
 - Clearly Expressing Ideas
 
-Great communication starts with the ability to listen to and understand others. In his book [The 7 Habits of Highly Effective People](https://amzn.to/3Y9BpdA), Steven Covey shares the following: ==TODO==
+Great communication starts with the ability to listen to and understand others. In his book [The 7 Habits of Highly Effective People](https://amzn.to/3Y9BpdA), Steven Covey shares the following: <mark>==TO DO==</mark>
 
-An often overlooked aspect of a leader's role in communication is the creation of safe spaces. ==TODO: Crucial Conversations==
+An often overlooked aspect of a leader's role in communication is the creation of safe spaces. <mark>==TODO: Crucial Conversations==</mark>
 
 It is also crucial that leaders are able to clearly express themselves. Communication from a leader should be clear, genuine and honest. Leaders should only say they will do things they believe they will do. In the cases where they are unable to meet a commitment, they should reset expectations quickly. Communication should also be candid, transparent and empathetic. The book [Radical Candor](https://amzn.to/3Yfotmj) does a great job expressing this concept. Kim Scott expresses this concept on two axis: candor and empathy.
 
 ![Radical Candor](/assets/images/pages/leadership/radicalcandorchart.png)
 
 
-## Lifting Up
-Helping the people on your teams level up their skills plays an important role in individual motivation and team execution. A study from Gallup research found that most millennials want coaching, development and greater purpose from their jobs[^1].
+## Individual Engagement and Development
+Engaging the people on your teams, and helping them level up their skills plays an important role in individual motivation and team execution. A study from Gallup Research found that most millennials want coaching, development and greater purpose from their jobs[^1]. 
+
+#### Aligning Interests
+The Gallup report [How Millennials Want to Work and Live](https://www.gallup.com/workplace/238073/millennials-work-live.aspx) estimates that turnover due to lack of engagement costs the U.S. economy over $30 billion annually. Increasing engagement and motivation is an important responsibility of a business leader. Research in the Transformational Leadership has found that aligning personal interest with business objectives creates engagement in the employee and business value for the business[^2].
+
+<mark>TODO</mark>
+
+#### Developing a Career Path
+Developing a career path with your direct reports gives employees a clear view of what things are important to the company. There are far more things to learn than there is time to learn them. A career path helps the individual know what areas of study are most important for them. 
+
+A great career path will include:
+- A list of expectations of the employee's current level, and how well they are meeting those.
+- A list of expectations at the next level, and how well they meet those as well.
+- A plan to focus on a small set of expectations that need improvement.
+- Resources to guide and support the employee in their improvement.
+- A regularly scheduled meeting to review progress, update skill scores, and revise plans (I recommend this happen no less frequently than once per quarter).
+
+#### Learning Opportunities and Support
+It is a leader's responsibility to provide learning opportunies for the people on their teams. The best learning opportunities are low risk, high support and have clear expectations. Some examples include:
+
+- Finding small tasks that align with a new area of interest.
+- Providing timely feedback with candor and empathy.
+- Allotting time to meet with mentors
 
 [^1]: [How Millennials Want to Work and Live](https://www.gallup.com/workplace/238073/millennials-work-live.aspx)
+[^2]: [TODO](./)
 
-- Career Path Development
-- Learning Opportunities and Support
-- Timely Feedback with Radical Candor
-
-## Culture Development
+<!-- ## Culture Development
 - Defining Culture
 - Evangelizing Culture
 - Evolving Culture
@@ -87,9 +106,9 @@ Helping the people on your teams level up their skills plays an important role i
 - Hiring Funnel
 - Hiring Goals
 - Onboarding
-- Attrition
+- Attrition -->
 
-## Resources
+<!-- ## Resources
 #### Books
 Communication
 - [Radical Candor by Kim Scott](https://amzn.to/3Yfotmj) ([Book Review](barlowtucker.com/reviews/radicalcandor.html))
@@ -103,5 +122,5 @@ Start-ups
 #### Peer Reviewed Articles
 
 
-#### Software
+#### Software -->
 
