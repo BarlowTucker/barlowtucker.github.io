@@ -5,7 +5,7 @@ meta_description: "Articles on leadership and technology"
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
-  image: "barlow2020.jpg"
+  image: "me-oct2022-500.jpg"
   greetings: "Start-ups, Leadership, and Technology"
 favicon: "assets/images/favicon.ico"
 baseurl:
@@ -37,8 +37,12 @@ linkedin: "barlowtucker"
 navigation:
   - text: Home
     url: /
-  - text: About
+  - text: About Me
     url: /about
+  - text: Coaching
+    url: /coaching
+  - text: Leadership
+    url: /leadership
   # - text: Videos
   #   url: /videos
   - text: Search
