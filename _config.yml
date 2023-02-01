@@ -39,8 +39,8 @@ navigation:
     url: /
   - text: About Me
     url: /about
-  - text: Coaching
-    url: /coaching
+  #- text: Coaching
+  #  url: /coaching
   - text: Leadership
     url: /leadership
   # - text: Videos
