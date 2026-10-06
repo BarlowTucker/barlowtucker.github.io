@@ -1,135 +1,81 @@
-/* ===================================================================
-   BARLOW TUCKER — Main JavaScript
-   Scroll reveal, nav behavior, mobile menu, entrance animations
-   =================================================================== */
-
+/* barlowtucker.com — small, dependency-free behaviors
+   1. Header state on scroll
+   2. Mobile menu (accessible toggle)
+   3. Scroll reveal (IntersectionObserver, respects reduced motion)
+*/
 (function () {
   'use strict';
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
 
-  // -------------------------------------------------------------------
-  // NAV SCROLL BEHAVIOR
-  // -------------------------------------------------------------------
-  const header = document.getElementById('site-header');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var header = document.getElementById('site-header');
 
-  function handleNavScroll() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+  /* 1. Header state ------------------------------------------------- */
+  function onScroll() {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* 2. Mobile menu -------------------------------------------------- */
+  var toggle = document.querySelector('.nav__toggle');
+  var panel = document.getElementById('nav-panel');
+
+  function setMenu(open) {
+    if (!toggle || !panel || !header) return;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    header.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
   }
 
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-  handleNavScroll(); // Set initial state
-
-  // -------------------------------------------------------------------
-  // MOBILE MENU TOGGLE
-  // -------------------------------------------------------------------
-  const navToggle = document.querySelector('.nav__toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = navMenu.querySelectorAll('.nav__link, .nav__cta');
-
-  function openMenu() {
-    navToggle.classList.add('active');
-    navMenu.classList.add('open');
-    navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.setAttribute('aria-label', 'Close menu');
-  }
-
-  function closeMenu() {
-    navToggle.classList.remove('active');
-    navMenu.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Open menu');
-  }
-
-  navToggle.addEventListener('click', function () {
-    if (navMenu.classList.contains('open')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  // Close menu when a link is clicked
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close menu on Escape key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-      closeMenu();
-      navToggle.focus();
-    }
-  });
-
-  // -------------------------------------------------------------------
-  // ENTRANCE ANIMATIONS (Hero stagger)
-  // -------------------------------------------------------------------
-  if (!prefersReducedMotion) {
-    var staggerElements = document.querySelectorAll('.entrance-stagger');
-    staggerElements.forEach(function (el) {
-      var delay = (parseInt(el.getAttribute('data-stagger'), 10) || 1) * 150;
-      setTimeout(function () {
-        el.classList.add('visible');
-      }, delay + 200); // 200ms base delay for page load
+  if (toggle && panel) {
+    toggle.addEventListener('click', function () {
+      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
-  } else {
-    // Show everything immediately if reduced motion is preferred
-    document.querySelectorAll('.entrance-stagger').forEach(function (el) {
-      el.classList.add('visible');
+    panel.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
     });
-  }
-
-  // -------------------------------------------------------------------
-  // SCROLL REVEAL (IntersectionObserver)
-  // -------------------------------------------------------------------
-  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-    var revealObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -60px 0px',
-      }
-    );
-
-    document.querySelectorAll('.scroll-reveal').forEach(function (el) {
-      revealObserver.observe(el);
-    });
-  } else {
-    // Show everything immediately for reduced motion or no IO support
-    document.querySelectorAll('.scroll-reveal').forEach(function (el) {
-      el.classList.add('revealed');
-    });
-  }
-
-  // -------------------------------------------------------------------
-  // SMOOTH SCROLL FOR NAV LINKS (fallback for older browsers)
-  // -------------------------------------------------------------------
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      var target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        var headerHeight = header.offsetHeight;
-        var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: prefersReducedMotion ? 'auto' : 'smooth',
-        });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setMenu(false);
+        toggle.focus();
       }
     });
+    // Reset if the viewport grows past the mobile breakpoint while open.
+    var mq = window.matchMedia('(min-width: 56rem)');
+    var onMq = function (ev) { if (ev.matches) setMenu(false); };
+    if (mq.addEventListener) mq.addEventListener('change', onMq); else if (mq.addListener) mq.addListener(onMq);
+  }
+
+  /* 3. Scroll reveal ------------------------------------------------ */
+  var targets = document.querySelectorAll('.reveal');
+  if (!targets.length) return;
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+  targets.forEach(function (el) {
+    // Anything already in view on load shows immediately; no waiting on scroll.
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      el.classList.add('is-visible');
+    } else {
+      io.observe(el);
+    }
   });
 })();
