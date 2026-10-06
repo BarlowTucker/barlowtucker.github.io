@@ -556,46 +556,6 @@ em, i { font-style: italic; }
   .eyebrow { font-size: 0.66rem; letter-spacing: 0.06em; }
 }
 
-/* Proof strip */
-.proof {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.proof__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.proof__item {
-  padding: var(--s-5) var(--s-4) var(--s-5) 0;
-  border-bottom: 1px solid var(--line);
-}
-.proof__item:nth-child(odd) { padding-right: var(--s-5); }
-.proof__item:nth-child(even) { padding-left: var(--s-5); border-left: 1px solid var(--line); }
-.proof__item:nth-last-child(-n+2) { border-bottom: 0; }
-.proof__value {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--step-3);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-.proof__label {
-  display: block;
-  margin-top: var(--s-3);
-  font-size: 0.875rem;
-  line-height: 1.45;
-  color: var(--text-2);
-}
-@media (min-width: 56rem) {
-  .proof__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .proof__item { border-bottom: 0; padding: var(--s-6) var(--s-6) var(--s-6) 0; }
-  .proof__item:nth-child(odd) { padding-right: var(--s-6); }
-  .proof__item:nth-child(even) { padding-left: var(--s-6); }
-  .proof__item + .proof__item { border-left: 1px solid var(--line); padding-left: var(--s-6); }
-}
-
 /* ---------- 6. Aside statement (About page) ---------- */
 .aside-statement {
   margin-top: var(--s-8);
@@ -835,13 +795,13 @@ em, i { font-style: italic; }
   .fact { padding: var(--s-7) var(--s-6); }
 }
 @media (min-width: 40rem) and (max-width: 63.99rem) {
-  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 /* Beside the copy, the facts stack as rows: value left, label right. */
 @media (min-width: 64rem) {
   .fact {
     display: grid;
-    grid-template-columns: 9rem minmax(0, 1fr);
+    grid-template-columns: 10rem minmax(0, 1fr);
     gap: var(--s-6);
     align-items: center;
   }
