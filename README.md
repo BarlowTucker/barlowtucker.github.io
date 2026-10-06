@@ -5,7 +5,7 @@ Personal advisory site for Barlow Tucker. Plain HTML, CSS, and a little JavaScri
 ## Structure
 
 ```
-index.html                  Homepage (hero, problems, how I help, engagement models, why, point of view, about teaser, contact)
+index.html                  Homepage (hero, why, how I help, engagement models, about teaser, contact)
 about/index.html            About page (story, career history, how I work)
 insights/index.html         Insights index (topic pillars, articles, talks)
 insights/leveling-up/       One article; copy this folder to add another

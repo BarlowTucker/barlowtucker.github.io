@@ -596,43 +596,7 @@ em, i { font-style: italic; }
   .proof__item + .proof__item { border-left: 1px solid var(--line); padding-left: var(--s-6); }
 }
 
-/* ---------- 6. Problems ---------- */
-.problems {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--s-4);
-}
-.problem {
-  position: relative;
-  padding: var(--s-6);
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), background-color var(--dur) var(--ease);
-}
-.problem:hover { border-color: var(--line-strong); background: rgba(255,255,255,0.8); }
-.problem__index {
-  position: absolute;
-  top: var(--s-5);
-  right: var(--s-5);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: var(--accent-deep);
-}
-.problem h3 {
-  font-size: var(--step-2);
-  padding-right: 3rem;
-}
-.problem p {
-  margin-top: var(--s-4);
-  color: var(--text-2);
-}
-@media (min-width: 48rem) {
-  .problems { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
-  .problem { padding: var(--s-7); }
-}
-
+/* ---------- 6. Aside statement (About page) ---------- */
 .aside-statement {
   margin-top: var(--s-8);
   padding-top: var(--s-6);
@@ -653,44 +617,84 @@ em, i { font-style: italic; }
 }
 
 /* ---------- 7. Capabilities ---------- */
-.capabilities { border-top: 1px solid var(--line); }
-.capability {
+.capabilities {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--s-5);
-  padding-block: var(--s-7);
-  border-bottom: 1px solid var(--line);
-  scroll-margin-top: calc(var(--header-h) + 1rem);
+  gap: var(--s-4);
 }
-.capability__head { position: relative; }
+.capability {
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-6);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.capability:hover { border-color: var(--line-strong); box-shadow: 0 10px 30px -18px rgba(21, 23, 42, 0.35); }
+.capability__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--s-5);
+}
+.capability__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  background: var(--accent-wash);
+  color: var(--accent-deep);
+}
+.capability__icon svg { width: 1.5rem; height: 1.5rem; }
 .capability__num {
-  display: block;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   color: var(--accent-deep);
-  margin-bottom: var(--s-3);
 }
-.capability h3 {
-  font-size: var(--step-3);
-  letter-spacing: -0.02em;
-}
+.capability h3 { font-size: var(--step-2); line-height: 1.2; }
 .capability__tagline {
   margin-top: var(--s-3);
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--step-1);
   line-height: 1.4;
-  color: var(--text-2);
+  color: var(--text);
 }
-.capability__body p { color: var(--text-2); }
-.capability__body .chips { margin-top: var(--s-5); }
-@media (min-width: 56rem) {
-  .capability {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: var(--s-10);
-    padding-block: var(--s-8);
-  }
+.capability__desc { margin-top: var(--s-4); margin-bottom: var(--s-6); color: var(--text-2); }
+
+/* Checklist: what a capability includes. Pinned to the card bottom so rows align across a row of cards. */
+.checklist {
+  margin-top: auto;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+  gap: var(--s-3) var(--s-4);
+}
+.checklist li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+.checklist li::before {
+  content: "";
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.15rem;
+  background: var(--accent-deep);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+@media (min-width: 48rem) {
+  .capabilities { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+  .capability { padding: var(--s-7); }
 }
 
 /* CTA band */
@@ -801,7 +805,7 @@ em, i { font-style: italic; }
 }
 .facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   border-top: 1px solid var(--line-dark);
   border-left: 1px solid var(--line-dark);
 }
@@ -828,64 +832,24 @@ em, i { font-style: italic; }
 }
 @media (min-width: 64rem) {
   .why { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-10); align-items: start; }
-  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .fact { padding: var(--s-7) var(--s-6); }
 }
-
-/* ---------- 10. Philosophy ---------- */
-.pov {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--s-8);
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-.pov__head h2 { font-size: var(--step-4); }
-.pov__head .lede { margin-top: var(--s-5); }
-.pov__diagram {
-  margin-top: var(--s-7);
-  max-width: 22rem;
-}
-.pov__diagram svg { width: 100%; height: auto; }
-.pov__diagram text {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  fill: var(--text-2);
-}
-.pov__diagram .d-line { stroke: var(--line-strong); stroke-width: 1; fill: none; }
-.pov__diagram .d-node { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
-.pov__diagram .d-node--accent { fill: var(--accent); stroke: var(--accent); }
-.pov__diagram .d-center { fill: var(--text); font-family: var(--font-display); font-size: 15px; text-transform: none; letter-spacing: 0; font-style: italic; }
-
-.principles { counter-reset: p; }
-.principle {
-  counter-increment: p;
-  display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: var(--s-4);
-  padding-block: var(--s-5);
-  border-top: 1px solid var(--line);
-}
-.principle:last-child { border-bottom: 1px solid var(--line); }
-.principle::before {
-  content: counter(p, decimal-leading-zero);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: var(--accent-deep);
-  padding-top: 0.45rem;
-}
-.principle h3 {
-  font-size: var(--step-2);
-  line-height: 1.25;
-  font-weight: 600;
-}
-.principle p { grid-column: 2; margin-top: var(--s-2); color: var(--text-2); font-size: 0.9375rem; }
+/* Beside the copy, the facts stack as rows: value left, label right. */
 @media (min-width: 64rem) {
-  .pov { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-10); align-items: start; }
+  .fact {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: center;
+  }
+  .fact__value--text { padding-top: 0; }
+  .fact__label { margin-top: 0; font-size: 1rem; }
 }
 
-/* ---------- 11. About teaser ---------- */
+/* ---------- 10. About teaser ---------- */
 .about-teaser {
   display: grid;
   grid-template-columns: 1fr;
@@ -920,7 +884,7 @@ em, i { font-style: italic; }
   .about-teaser { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--s-10); align-items: start; }
 }
 
-/* ---------- 12. Contact (dark) ---------- */
+/* ---------- 11. Contact (dark) ---------- */
 .contact {
   display: grid;
   grid-template-columns: 1fr;
@@ -952,7 +916,7 @@ em, i { font-style: italic; }
   .contact__body { padding-top: 0.75rem; }
 }
 
-/* ---------- 13. Footer ---------- */
+/* ---------- 12. Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--line);
   padding-block: var(--s-8) var(--s-6);
@@ -1008,7 +972,7 @@ em, i { font-style: italic; }
   .footer__grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-8); }
 }
 
-/* ---------- 14. Sub-page hero ---------- */
+/* ---------- 13. Sub-page hero ---------- */
 .page-hero {
   position: relative;
   padding-top: clamp(2rem, 6vw, 4.5rem);
@@ -1035,7 +999,7 @@ em, i { font-style: italic; }
   .page-hero--split .hero__media { justify-self: end; }
 }
 
-/* ---------- 15. About page ---------- */
+/* ---------- 14. About page ---------- */
 .story {
   display: grid;
   grid-template-columns: 1fr;
@@ -1119,7 +1083,7 @@ em, i { font-style: italic; }
   .values { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
 }
 
-/* ---------- 16. Insights ---------- */
+/* ---------- 15. Insights ---------- */
 .topics {
   display: grid;
   grid-template-columns: 1fr;
@@ -1175,7 +1139,7 @@ em, i { font-style: italic; }
 }
 .note a { text-decoration: underline; text-decoration-color: var(--accent); color: var(--text); }
 
-/* ---------- 17. Article ---------- */
+/* ---------- 16. Article ---------- */
 .article-head { padding-block: clamp(2rem, 6vw, 4.5rem) var(--s-8); border-bottom: 1px solid var(--line); }
 .article-head .post__meta { margin-bottom: var(--s-5); }
 .article-head h1 { font-size: var(--step-5); letter-spacing: -0.025em; line-height: 1.05; max-width: 18ch; }
@@ -1233,7 +1197,7 @@ em, i { font-style: italic; }
 .back-link svg { width: 1em; height: 1em; }
 .back-link:hover { color: var(--text); }
 
-/* ---------- 18. Reveal motion ---------- */
+/* ---------- 17. Reveal motion ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(0.75rem);
@@ -1252,7 +1216,7 @@ em, i { font-style: italic; }
   .reveal { opacity: 1; transform: none; }
 }
 
-/* ---------- 19. Print ---------- */
+/* ---------- 18. Print ---------- */
 @media print {
   .site-header, .site-footer, .cta-band, .btn, .skip-link { display: none !important; }
   body { background: #fff; color: #000; }
@@ -1260,7 +1224,7 @@ em, i { font-style: italic; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
 }
 
-/* ---------- 20. ZPD figures (article diagrams, built in HTML so text stays legible) ---------- */
+/* ---------- 19. ZPD figures (article diagrams, built in HTML so text stays legible) ---------- */
 .zpd-figure { margin: 2.5em 0; }
 .zpd-compare {
   display: grid;
